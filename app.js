@@ -41,7 +41,7 @@ const getData = async()=>{
         const myRegions = document.querySelectorAll('.myRegions')
         //intialy hide all countries to show the country by region
         if(e.target.value == 'All'){
-            c.parentElement.parentElement.parentElement.parentElement.style.display = 'block'
+            location.reload()
         }
         myRegions.forEach(c=>{
             c.parentElement.parentElement.parentElement.parentElement.style.display = 'none'
