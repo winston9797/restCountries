@@ -21,41 +21,46 @@ const toggleMode  = ()=>{
             country.classList.remove('dark')
         });
     }
-    console.log(myBody.classList)
     }
 
-//pagination 
-let currentPage = 0
-let postsPerPage = 20
-let currentPosts = currentPage * postsPerPage
-//change page
-function changePage(e){
-    console.log(e.currentTarget)
-}
+
+    
 
 //get dom elements
 let itemList = document.getElementById('itemList')
 //get data
 const getData = async()=>{
     const res = await fetch('data.json')
-    const countries = await res.json()
-    //populate pages in html
-    let pagesCount = Math.round(countries.length / postsPerPage)
-    let slicedCont
-    const pagination = document.querySelector('.pagesList')
-    for (let i = 0; i <= pagesCount; i++) {
-        let li = document.createElement('li')
-        let a = document.createElement('a')
-        a.setAttribute('onClick','changePage()')
-        a.setAttribute('href','#')
-        a.innerHTML = i
-        li.appendChild(a)
-        pagination.appendChild(li)
-    }
-    countries.forEach(c =>{
-        slicedCont = countries.slice(currentPosts,currentPosts + postsPerPage)
+    let countries = await res.json()
+    //get input
+    let searchInput = document.getElementById('searchInput')
+    let timer
+    searchInput.addEventListener('input',e=>{
+        clearTimeout(timer)
+        timer = setTimeout(() => {
+            let searchResults = []
+            const Countries = document.querySelectorAll('.countryName')
+            //intially hide all countries
+            Countries.forEach(c =>{
+                c.parentElement.parentElement.style.display = 'none'
+            })
+            //add countries to search results to display it in our js
+            Countries.forEach(c =>{
+                searchResults.push(c)
+            })
+            //filter countries by search query
+            searchResults.filter(i => {
+                if(i.innerHTML.toLowerCase().includes(e.target.value) ||i.innerHTML.toLowerCase().charAt(0) == e.target.value ){
+                    return i.innerHTML
+                }
+            })
+            .forEach(i=>{
+                //show only searched for countries
+                i.parentElement.parentElement.style.display = 'block'
+            })
+        }, 1000);
     })
-    
+    //filter object
     //display data (populate html elements)
     Object.values(countries).forEach(country=>{
         const dataHolder = document.getElementById('dataHolder')

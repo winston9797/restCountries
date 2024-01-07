@@ -10,6 +10,9 @@ img{
 a,li,h1,h2,input, input:focus,select,select:focus{
     all:unset
 }
+.hide{
+    display: none;
+}
 /* dark mode */
 body.dark{
     background-color: #202E37;
@@ -113,7 +116,7 @@ header.dark{
     box-shadow: rgba(71, 71, 71, 0.2) 0px 2px 8px 0px;
 }
 .countryCard:hover{
-    transform: scale(1.05);
+    transform: scale(1);
     transition: all 0.5s;
 }
 
