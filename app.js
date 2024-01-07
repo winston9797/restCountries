@@ -80,3 +80,10 @@ const getData = async()=>{
     })
 }
 getData()
+//search form handling
+
+//filter by continent
+
+//dark mode switch
+
+//deatails page
