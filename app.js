@@ -24,7 +24,6 @@ const toggleMode  = ()=>{
     }
 
 
-    
 
 //get dom elements
 let itemList = document.getElementById('itemList')
@@ -33,8 +32,25 @@ const getData = async()=>{
     const res = await fetch('data.json')
     let countries = await res.json()
     //get input
+    const mySelect = document.getElementById('mySelect')
     let searchInput = document.getElementById('searchInput')
     let timer
+    //select by region functionality
+    mySelect.addEventListener('click',e=>{
+        let regionsArr = []
+        const myRegions = document.querySelectorAll('.myRegions')
+        //intialy hide all countries to show the country by region
+        if(e.target.value == 'All'){
+            c.parentElement.parentElement.parentElement.parentElement.style.display = 'block'
+        }
+        myRegions.forEach(c=>{
+            c.parentElement.parentElement.parentElement.parentElement.style.display = 'none'
+            if(c.innerHTML == e.target.value){
+                c.parentElement.parentElement.parentElement.parentElement.style.display = 'block'
+            }
+        })
+    })
+    //search functionality
     searchInput.addEventListener('input',e=>{
         clearTimeout(timer)
         timer = setTimeout(() => {
@@ -72,7 +88,7 @@ const getData = async()=>{
             <h2 class="countryName">${country.name}</h2>
             <ul class="details">
                 <li><span class="text-bold">Population : </span>#${country.population}</li>
-                <li><span class="text-bold">Region : </span>${country.region}</li>
+                <li><span class="text-bold">Region : </span><span class='myRegions'>${country.region}</span></li>
                 <li><span class="text-bold">Capital : </span>${country.capital}</li>
             </ul>
         </div>`
