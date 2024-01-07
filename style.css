@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300;6..12,600;6..12,800&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img{
+    width: 100%;
+}
+a,li,h1,h2,input, input:focus,select,select:focus{
+    all:unset
+}
+/* dark mode */
+body.dark{
+    background-color: #202E37;
+    color: #fff;
+}
+/* dark mode */
+body{
+    background-color: #fafafa;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1rem;
+    color: #111;
+}
+
+.wrapper{
+    margin:0 auto;
+    width: 80%;
+}
+.header{
+    background-color: #fff;
+    box-shadow: rgba(190, 190, 190, 0.2) 0px 2px 8px 0px;
+    padding: 20px 0;
+
+}
+/* dark mode */
+header.dark{
+    background-color: #2B3642;
+    color: #fff;
+    box-shadow: rgba(71, 71, 71, 0.2) 0px 2px 8px 0px;
+}
+/* dark mode */
+
+.header > .wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+.pageTitle{
+    font-weight: 800;
+    font-size: 1.2rem;
+}
+
+.modeBtn{
+    background-color: inherit;
+    color: inherit;
+    border: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+.innerHead{
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+.innerHead > .wrapper{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.search-icon{
+    position: absolute;
+    top: 18px;
+    left: 10px;
+    color: #888;
+}
+.innerHead .searchForm{
+    padding-block:15px;
+    padding-inline:35px 70px ;
+    border: none;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.innerHead select{
+    padding-block:15px;
+    padding-inline:20px 140px ;
+    background-color: inherit;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.innerHead select > *{
+    background-color: inherit;
+    color: inherit;
+    text-indent: 5px;
+    width: 200px;
+}
+.innerHead .regions{
+    border: none;
+}
+.countries > .wrapper{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 50px;
+}
+/* dark mode */
+.countryCard.dark {
+    background-color: #181e24;
+    color: #fff;
+}
+/* dark mode */
+
+.countryCard{
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: rgba(71, 71, 71, 0.2) 0px 2px 8px 0px;
+}
+
+.countryCard img{
+    height: 150px;
+    min-width: none;width: 100%;
+}
+.cardContent{
+    padding-inline: 10px;
+    padding-block-end: 40px;
+    padding-block-start: 30px;
+}
+.cardContent > ul > *{
+    display: block;
+}
+.cardContent h2{
+    display: block  ;
+    padding-bottom: 15px;
+    font-weight: 800;
+}
+.cardContent span{
+    font-weight: 600;
+}
+
+.pagination{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 0;
+}
+.pagesList > * > a{
+    color: #000;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+.pagesList > * > a:hover{
+    background-color: #000;
+    color: #fff;
+}
