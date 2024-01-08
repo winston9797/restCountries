@@ -122,7 +122,7 @@ header.dark{
 
 .countryCard img{
     height: 150px;
-    min-width: none;width: 100%;
+    width: 100%;
 }
 .cardContent{
     padding-inline: 10px;
@@ -157,3 +157,69 @@ header.dark{
     background-color: #000;
     color: #fff;
 }
+/*mobile*/
+@media (max-width: 400px) and (max-width:600px) { 
+    img{
+        width: 100% !important;
+        display: block;
+        height: auto;
+    }
+    .wrapper{
+        margin:0 auto;
+        width: 90%;
+    }
+    .innerHead > .wrapper{
+        display: flex;
+        flex-direction: column;
+    }
+    .innerHead .searchForm{
+        margin-bottom: 20px;
+    }
+    .countries > .wrapper {
+        grid-template-columns: 1fr;
+    }
+ }
+/*tab*/
+ @media (max-width: 800px) and (min-width:400px) { 
+    img{
+        width: 100% !important;
+        display: block;
+        height: auto;
+    }
+    .wrapper{
+        margin:0 auto;
+        width: 90%;
+    }
+    .innerHead > .wrapper{
+        display: flex;
+        flex-direction: column;
+    }
+    .innerHead .searchForm{
+        margin-bottom: 20px;
+    }
+    .countries > .wrapper {
+        grid-template-columns: 1fr 1fr;
+    }
+ }
+
+ @media (max-width: 600px) and (min-width:400px) { 
+    img{
+        width: 100% !important;
+        display: block;
+        height: auto;
+    }
+    .wrapper{
+        margin:0 auto;
+        width: 90%;
+    }
+    .innerHead > .wrapper{
+        display: flex;
+        flex-direction: column;
+    }
+    .innerHead .searchForm{
+        margin-bottom: 20px;
+    }
+    .countries > .wrapper {
+        grid-template-columns: 1fr 1fr;
+    }
+ }
